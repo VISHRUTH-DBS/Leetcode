@@ -1,0 +1,13 @@
+class Solution {
+    public int mirrorDistance(int n) {
+        int m=0;
+        int x=n;
+        while(n>0){
+            int rem=n%10;
+            m=(m*10)+rem;
+            n=n/10;
+        }        
+        int o=Math.abs(m-x);
+        return o;
+    }
+}
