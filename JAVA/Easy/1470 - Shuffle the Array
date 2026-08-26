@@ -1,0 +1,36 @@
+class Solution {
+
+    public int[] shuffle(int[] nums, int n) {
+
+        int m = nums.length;
+
+        int a1[] = new int[n];
+        int a2[] = new int[n];
+
+        int j = 0, k = 0;
+
+        for(int i = 0; i < n; i++){
+            a1[i] = nums[i];
+        }
+
+        for(int i = n; i < m; i++){
+            a2[i - n] = nums[i];
+        }
+
+        int a3[] = new int[m];
+
+        for(int i = 0; i < m; i++){
+
+            if(i % 2 == 0){
+                a3[i] = a1[j];
+                j++;
+            }
+            else{
+                a3[i] = a2[k];
+                k++;
+            }
+        }
+
+        return a3;
+    }
+}
