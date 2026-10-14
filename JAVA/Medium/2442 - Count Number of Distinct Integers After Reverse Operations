@@ -1,0 +1,21 @@
+class Solution {
+    public int countDistinctIntegers(int[] nums) {
+        int n = nums.length;
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            int a = nums[i];
+            int rev = 0;
+            while(a>0){
+                int r = a%10;
+                rev = (rev*10) + r;
+                a = a/10;
+            }
+            arr[i] = rev;
+        }
+        Set<Integer> set = new HashSet<>(); 
+        for(int i=0;i<n;i++){
+        set.add(nums[i]);
+        set.add(arr[i]);}
+        return set.size();
+    }
+}
