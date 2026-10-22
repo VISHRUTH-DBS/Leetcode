@@ -1,0 +1,26 @@
+class Solution {
+    public boolean isFascinating(int n) {
+        boolean a=true;
+        int m = 2*n;
+        int o = 3*n;
+        int arr[] = new int[9];
+        for(int i=0;i<3;i++){
+            arr[i]=n%10;
+            n=n/10;
+        }        
+        for(int i=3;i<6;i++){
+            arr[i]=m%10;
+            m=m/10;
+        }
+        for(int i=6;i<9;i++){
+            arr[i]=o%10;
+            o=o/10;
+        }
+        Arrays.sort(arr);
+        for(int i=0;i<9;i++){
+            if(arr[i]!=i+1)
+            a=false;
+        }
+        return a;
+    }
+}
